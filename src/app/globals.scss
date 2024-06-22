@@ -1,0 +1,224 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+.bannerContainer {
+  background-color: #00B933;
+  width: 50%;
+}
+.formSection {
+  padding: 4rem 2rem;
+}
+.formSection img {
+  margin: 0 auto;
+}
+.signinTitle {
+
+
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 33px;
+
+    color: #706C6C;
+
+}
+.form-container label {
+
+font-family: 'Open Sans';
+font-style: normal;
+font-weight: 400;
+font-size: 14px;
+line-height: 23px;
+color: #84848A;
+
+
+}
+
+// forgot password styles
+
+.forgotButton {
+  /* terms */
+
+position: absolute;
+width: 94px;
+left: 251px;
+top: 51.42%;
+bottom: 45.85%;
+
+font-family: 'Open Sans';
+font-style: normal;
+font-weight: 400;
+font-size: 12px;
+line-height: 23px;
+/* identical to box height, or 188% */
+text-align: right;
+
+color: #009429;
+
+
+}
+
+.signInButton {
+  /* Rectangle 5 */
+
+position: absolute;
+width: 300px;
+height: 50px;
+left: 45px;
+top: 480px;
+
+background: #009429;
+border-radius: 10px;
+
+}
+
+// signin button text styles
+.signInText{
+  /* Sign In */
+
+position: absolute;
+width: 53px;
+height: 23px;
+left: 168px;
+top: 494px;
+
+font-family: 'Open Sans';
+font-style: normal;
+font-weight: 700;
+font-size: 16px;
+line-height: 23px;
+/* identical to box height, or 141% */
+text-align: right;
+letter-spacing: -0.2px;
+
+color: #FFFFFF;
+
+
+}
+
+.dividerBorderStyles{
+  /* line-divider */
+
+position: absolute;
+left: 11.54%;
+right: 11.54%;
+top: 67.42%;
+bottom: 32.38%;
+
+border: 1px solid #E0E0E0;
+
+}
+
+.dividerTextStyles {
+  /* Or */
+
+position: absolute;
+left: 47.18%;
+right: 47.42%;
+top: 66.43%;
+bottom: 31.63%;
+
+font-family: 'Open Sans';
+font-style: normal;
+font-weight: 700;
+font-size: 12.8px;
+line-height: 17px;
+text-align: center;
+
+color: #212121;
+
+
+}
+
+.noAccountText {
+  /* No Account yet? SIGN UP */
+
+position: absolute;
+left: 30.26%;
+right: 30.26%;
+top: 80.33%;
+bottom: 17.77%;
+
+font-family: 'Open Sans';
+font-style: normal;
+font-weight: 400;
+font-size: 13px;
+line-height: 18px;
+text-align: center;
+
+color: #424242;
+
+
+}
+
+.pcBannerText {
+  /* Header */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 0px;
+gap: 24px;
+
+position: absolute;
+width: 535px;
+height: 60px;
+left: 144px;
+top: 131px;
+
+
+}
+
+.pcBannerSubText {
+  /* Lorem ipsum dolor sit amet, co */
+
+position: absolute;
+left: 10%;
+right: 63.61%;
+top: 27.67%;
+bottom: 62.89%;
+
+font-family: 'Open Sans';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 28px;
+/* or 176% */
+
+color: #FFFFFF;
+
+
+}
