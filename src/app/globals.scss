@@ -1,6 +1,11 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+$small: 300px;
+$medium: 900px;
+$large: 1024px;
 
 :root {
   --foreground-rgb: 0, 0, 0;
@@ -33,37 +38,186 @@ body {
 }
 
 .bannerContainer {
-  background-color: #00B933;
+  background-color: #00b933;
   width: 50%;
+  padding: 6rem 6rem;
+  display: none;
+  @media screen and (min-width: $medium) {
+    display: block;
+  }
+}
+.signinContainer {
+  background-color: #00b933;
+  .BusinessHeader {
+    font-family: "Open Sans";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 35px;
+    line-height: 43px;
+    color: #ffffff;
+    margin-bottom: 1rem;
+  }
+  .BusinessHeaderSubText {
+    font-family: "Open Sans";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 28px;
+    color: #ffffff;
+  }
+  .bannerTextContainer {
+    max-width: 530px;
+    margin: 0 auto;
+  }
+  .imageContainer {
+    img {
+      margin: 0 auto;
+    }
+  }
+}
+.signInSectionWrapper {
+  background-color: white;
+  background-color: white;
+  border: 1px solid white;
+
+  @media screen and (min-width: $medium) {
+    border-bottom-left-radius: 75px;
+
+    width: 50%;
+  }
+}
+.signInTotalContent {
+  &.forgotPassword {
+    .infoText {
+      font-family: "Open Sans";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 28px;
+      text-align: center;
+      color: #757575;
+    }
+  }
+  &.verificationSuccess {
+    .infoText {
+      font-family: "Open Sans";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 28px;
+      /* or 176% */
+      text-align: center;
+
+      color: #000000;
+      .email {
+        cursor: pointer;
+        color: #009429;
+      }
+    }
+  }
 }
 .formSection {
   padding: 4rem 2rem;
+  margin: 0 auto;
+  @media screen and (min-width: $medium) {
+    max-width: 400px;
+  }
+  .form-container {
+    width: 100% !important;
+    .formInput {
+      margin-bottom: 1rem;
+      label {
+        margin-bottom: 10px;
+        font-family: "Open Sans";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 23px;
+        color: #84848a;
+      }
+      div {
+        width: 100%;
+        display: block;
+      }
+      input {
+        margin-top: 10px;
+        padding: 12px 30px;
+        border: 1px solid #e1e1e4;
+        border-radius: 5px;
+        width: 100%;
+      }
+    }
+    .remember {
+      width: 200px;
+      font-size: 12px;
+      display: flex;
+      span {
+        display: inline;
+        padding-right: 10px;
+      }
+      svg {
+        width: 20px;
+        border: 1px solid #bdbdbd;
+        border-radius: 5px;
+        padding: 2px;
+        color: #bdbdbd;
+      }
+    }
+    .forgotLinkText {
+      color: #1f9b83;
+      font-size: 12px;
+      cursor: pointer;
+    }
+    .signInButton {
+      background: #009429;
+      border-radius: 10px;
+      color: #fff;
+      width: 100%;
+      padding: 20px;
+      margin-top: 1rem;
+    }
+  }
+}
+
+.dividerWrapper {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  margin: 1rem 0;
+  .leftDivider,
+  .rightDivider {
+    width: 110px;
+    border: 2px solid #e0e0e0;
+  }
+  .dividerText {
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 0 20px;
+    font-family: "Open Sans";
+  }
+}
+.redirectLinkText {
+  font-size: 12;
+  text-align: center;
+  margin-top: 1rem;
+  .signUp {
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: underline;
+    text-transform: uppercase;
+  }
 }
 .formSection img {
   margin: 0 auto;
 }
 .signinTitle {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 33px;
 
-
-    font-family: 'Open Sans';
-    font-style: normal;
-    font-weight: 600;
-    font-size: 24px;
-    line-height: 33px;
-
-    color: #706C6C;
-
-}
-.form-container label {
-
-font-family: 'Open Sans';
-font-style: normal;
-font-weight: 400;
-font-size: 14px;
-line-height: 23px;
-color: #84848A;
-
-
+  color: #706c6c;
 }
 
 // forgot password styles
@@ -71,154 +225,147 @@ color: #84848A;
 .forgotButton {
   /* terms */
 
-position: absolute;
-width: 94px;
-left: 251px;
-top: 51.42%;
-bottom: 45.85%;
+  position: absolute;
+  width: 94px;
+  left: 251px;
+  top: 51.42%;
+  bottom: 45.85%;
 
-font-family: 'Open Sans';
-font-style: normal;
-font-weight: 400;
-font-size: 12px;
-line-height: 23px;
-/* identical to box height, or 188% */
-text-align: right;
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 23px;
+  /* identical to box height, or 188% */
+  text-align: right;
 
-color: #009429;
-
-
-}
-
-.signInButton {
-  /* Rectangle 5 */
-
-position: absolute;
-width: 300px;
-height: 50px;
-left: 45px;
-top: 480px;
-
-background: #009429;
-border-radius: 10px;
-
+  color: #009429;
 }
 
 // signin button text styles
-.signInText{
+.signInText {
   /* Sign In */
 
-position: absolute;
-width: 53px;
-height: 23px;
-left: 168px;
-top: 494px;
+  position: absolute;
+  width: 53px;
+  height: 23px;
+  left: 168px;
+  top: 494px;
 
-font-family: 'Open Sans';
-font-style: normal;
-font-weight: 700;
-font-size: 16px;
-line-height: 23px;
-/* identical to box height, or 141% */
-text-align: right;
-letter-spacing: -0.2px;
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 23px;
+  /* identical to box height, or 141% */
+  text-align: right;
+  letter-spacing: -0.2px;
 
-color: #FFFFFF;
-
-
+  color: #ffffff;
 }
 
-.dividerBorderStyles{
+.dividerBorderStyles {
   /* line-divider */
 
-position: absolute;
-left: 11.54%;
-right: 11.54%;
-top: 67.42%;
-bottom: 32.38%;
+  position: absolute;
+  left: 11.54%;
+  right: 11.54%;
+  top: 67.42%;
+  bottom: 32.38%;
 
-border: 1px solid #E0E0E0;
-
+  border: 1px solid #e0e0e0;
 }
 
 .dividerTextStyles {
   /* Or */
 
-position: absolute;
-left: 47.18%;
-right: 47.42%;
-top: 66.43%;
-bottom: 31.63%;
+  position: absolute;
+  left: 47.18%;
+  right: 47.42%;
+  top: 66.43%;
+  bottom: 31.63%;
 
-font-family: 'Open Sans';
-font-style: normal;
-font-weight: 700;
-font-size: 12.8px;
-line-height: 17px;
-text-align: center;
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12.8px;
+  line-height: 17px;
+  text-align: center;
 
-color: #212121;
-
-
+  color: #212121;
 }
 
 .noAccountText {
   /* No Account yet? SIGN UP */
 
-position: absolute;
-left: 30.26%;
-right: 30.26%;
-top: 80.33%;
-bottom: 17.77%;
+  position: absolute;
+  left: 30.26%;
+  right: 30.26%;
+  top: 80.33%;
+  bottom: 17.77%;
 
-font-family: 'Open Sans';
-font-style: normal;
-font-weight: 400;
-font-size: 13px;
-line-height: 18px;
-text-align: center;
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 18px;
+  text-align: center;
 
-color: #424242;
-
-
+  color: #424242;
 }
 
 .pcBannerText {
   /* Header */
 
-/* Auto layout */
-display: flex;
-flex-direction: column;
-align-items: flex-start;
-padding: 0px;
-gap: 24px;
+  /* Auto layout */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 24px;
 
-position: absolute;
-width: 535px;
-height: 60px;
-left: 144px;
-top: 131px;
+  position: absolute;
+  width: 535px;
+  height: 60px;
+  left: 144px;
+  top: 131px;
+  /* Building the Future... */
 
+  width: 535px;
+  height: 60px;
 
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 35px;
+  line-height: 43px;
+  /* or 123% */
+  display: flex;
+  align-items: flex-end;
+
+  color: #ffffff;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  flex-grow: 0;
 }
 
 .pcBannerSubText {
   /* Lorem ipsum dolor sit amet, co */
 
-position: absolute;
-left: 10%;
-right: 63.61%;
-top: 27.67%;
-bottom: 62.89%;
+  position: absolute;
+  left: 10%;
+  right: 63.61%;
+  top: 27.67%;
+  bottom: 62.89%;
 
-font-family: 'Open Sans';
-font-style: normal;
-font-weight: 400;
-font-size: 16px;
-line-height: 28px;
-/* or 176% */
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 28px;
+  /* or 176% */
 
-color: #FFFFFF;
-
-
+  color: #ffffff;
 }
